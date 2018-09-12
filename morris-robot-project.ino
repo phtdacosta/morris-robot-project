@@ -10,7 +10,10 @@
 #define TRUE  1
 #define FALSE 0
 
+// Total used servos
 #define ACTUATORS 8
+// May need manual calibration depending on the environment!
+#define DARK_THRESHOLD 512
 
 typedef enum operation {
     LEFT_CONTROL,
@@ -43,6 +46,13 @@ void writeServos (
     for (int i = initialGroupPos; i < finalGroupPos; i++) {
         group[i].write(degrees[i]);
     }
+}
+
+int isDark (int sensorValue) {
+    if (sensorValue < DARK_THRESHOLD)
+        return TRUE;
+    else
+        return FALSE;
 }
 
 int detectMode (
@@ -124,22 +134,20 @@ void loop()
                     writeServos(leftServos, frames[i], 0, 4);
                     delay(1000);
                 }
-
-                if (analogRead(A0) > 512)
-                    dark = FALSE;
-
-            } else if (mode == RIGHT_CONTROL) {
+                dark = isDark(analogRead(A0));
+            } 
+            else if (mode == RIGHT_CONTROL) {
                 for (int i = 0; i < 9; i++) {
                     writeServos(rightServos, frames[i], 0, 4);
                     delay(1000);
                 }
-
-                if (analogRead(A0) > 512)
-                    dark = FALSE;
+                dark = isDark(analogRead(A0));
             }
+            // DUAL_CONTROL condition not implemented yet
         } else {
-          digitalWrite(13, HIGH);
-          delay(1000);
+            digitalWrite(13, HIGH);
+            delay(1000);
+            dark = isDark(analogRead(A0));
         }
     }
 }
