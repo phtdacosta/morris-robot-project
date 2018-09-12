@@ -20,7 +20,7 @@ That's the prime project I ever cared to document and also the first one I did w
 * Coordinate the Arduino boards and consequently the robot actions thru the time, was also a naive challange that we faced just long after it was built. The timing differences between the boards that are caused by the slighest imperfections of their oscillator crystal, caused the robot to stumble over after just one minute of runtime.
     * That problem was out of our sight and had to be solved, so we used a sensor as the arbitrator unit, which would reset both boards into the beginning of their commands list.
 
-**The project can be seen live and running at this [video](https://www.youtube.com/watch?v=o8BQFcMctYs) on YouTube.**
+**The project can be seen live and running at this [video](https://www.youtube.com/watch?v=o8BQFcMctYs) on YouTube and high resolution images can be found at the end of this documentation.**
 
 # Material
 * **Steel wire**
@@ -37,35 +37,49 @@ That's the prime project I ever cared to document and also the first one I did w
     * Aproximately **100+ units** of **150 milimiter length** jump wire
     
 # Assembly
+
+![image](res/splitparts.jpg)
+
 ## Foot
 As previously stated, to maximize size and keep stability, each foot is nothing but a tetrahedron or triangular pyramid made of **6 single sticks wrapped with steel wire**.
 
-![image](res/footdesign.jpg)
+> Image reference **[#1](#1.)**
 
 ## Motor blocks and connections
 To create a motor block, simply stack two motors so that they look like one from the top and then rotate the top one to the left, hold then togheter and wrap the steel wire to hold them in that position. **That is a very tricky phase and is better to guide using the photos available below.**
 
 The connections between all motor blocks are two sticks togheter wrapped with steel wire in order to withstand the movement without tear itself apart. Remember to place a servo horn at the tip of each connection and wrap them well, Screwing them to the motor blocks is the next job.
 
-![image](res/servoblock.jpg)
-![image](res/servoblock2.jpg)
-![image](res/servoblock3.jpg)
-![image](res/servoblock4.jpg)
-![image](res/servoblock5.jpg)
+> Image references **[#2](#2.)**
 
 ## Putting all togheter
 That is a straightforward phase, screw everything up and make sure that the initial position of the servo horns are approximately in the 90th motor degree of freedom and if not, unscrew and screw again until all the connections stay around the 90 degrees. That action will avoid awnkward and unexpected movements at the end, when the robot is turned on to walk.
 
-![image](res/splitparts.jpg)
-![image](res/standup.jpg)
-![image](res/standupside.jpg)
-![image](res/standupside2.jpg)
+> Image references **[#3](#3.)**
 
 # Programming
 It is recommended to use the most updated version of the standard **Arduino IDE** to upload the code into the boards.
 The code is maintained in this [Github repository](https://github.com/phtdacosta/morris-robot-project) and can still be updated if needed.
 
 The code can automatically set the frame sequence to be executed by each board. Download the `.ino` file, upload it to each one of the boards and make sure to use a push button attached to the pin 2 of the board which controls the left side and to the pin 3 of the board which controls the right side. The code is simple and any tweaks should be easy to do.
+
+### 1.
+![image](res/footdesign.jpg)
+*Foot*
+
+### 2.
+![image](res/servoblock.jpg)
+![image](res/servoblock2.jpg)
+![image](res/servoblock3.jpg)
+![image](res/servoblock4.jpg)
+![image](res/servoblock5.jpg)
+*Motor blocks and connections*
+
+### 3.
+![image](res/standup.jpg)
+![image](res/standupside.jpg)
+![image](res/standupside2.jpg)
+*Putting all togheter*
 
 ## License
 The project is totally **open source** under the **MIT license**.
