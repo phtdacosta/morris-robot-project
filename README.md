@@ -43,19 +43,19 @@ That's the prime project I ever cared to document and also the first one I did w
 ## Foot
 As previously stated, to maximize size and keep stability, each foot is nothing but a tetrahedron or triangular pyramid made of **6 single sticks wrapped with steel wire**.
 
-> Image reference **[#1](#1.)**
+> Image reference **[#1](#1)**
 
 ## Motor blocks and connections
 To create a motor block, simply stack two motors so that they look like one from the top and then rotate the top one to the left, hold then togheter and wrap the steel wire to hold them in that position. **That is a very tricky phase and is better to guide using the photos available below.**
 
 The connections between all motor blocks are two sticks togheter wrapped with steel wire in order to withstand the movement without tear itself apart. Remember to place a servo horn at the tip of each connection and wrap them well, Screwing them to the motor blocks is the next job.
 
-> Image references **[#2](#2.)**
+> Image references **[#2](#2)**
 
 ## Putting all togheter
 That is a straightforward phase, screw everything up and make sure that the initial position of the servo horns are approximately in the 90th motor degree of freedom and if not, unscrew and screw again until all the connections stay around the 90 degrees. That action will avoid awnkward and unexpected movements at the end, when the robot is turned on to walk.
 
-> Image references **[#3](#3.)**
+> Image references **[#3](#3)**
 
 # Programming
 It is recommended to use the most updated version of the standard **Arduino IDE** to upload the code into the boards.
