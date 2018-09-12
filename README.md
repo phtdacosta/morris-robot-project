@@ -9,16 +9,16 @@
 That's the prime project I ever cared to document and also the first one I did while in college with my colleague and friend João Saffran. I'm proud that we managed to share the workload and take advantage of our individual abilities in that time to get the job done in record time.
 
 ## Introduction
-"Morris" as we call it, is biped robot was satisfactorily challenging robot to build. As a biped a lot of technical stuff was critical, and even a simple step would produce several side-effects that we had to imagine even before the construction.
+"Morris" was a satisfactorily challenging robot to build. As a biped, a lot of technical stuff was critical, and even a simple step would produce several side-effects that we had to imagine even before the construction.
 
-* Considering that triangles are the most stable geometric shape yet the one which would use the least amount of material, choosing to build the feet structure based on triangles was an almost obvious decision.
-    * Given that while walking, just one foot will have to stand the whole body weight, building a foot big enough to handle that feat was another concern joining the list.
-* The robot itself had to be as cheap as possible since as students, we had not much money to buy all expensive frame parts that a robot like this would require.
-    * Was decided then that we would use the cheapest yet strong and easy to modify structure we could, wooden popsicle sticks tied up with steel wire.
-* Power a robot with 8 servo motors (even being micro ones) is no easy task, and awnkward problems like really high current peaks and we had just our boards to do so in that time.
-    * Trying out the idea to split the robot function between two boards successfully handled the case and also created the oportunity to make further tests involving parallel computing using the boards.
-* Coordinate the Arduino boards and consequently the robot actions thru the time, was also a naive challange that we faced just long after it was built. The timing differences between the boards that are caused by their oscillator crystal slighest imperfections caused the robot to stumble over after just one minute of runtime.
-    * That problem was out of our sight and had to be solved, so we used a sensor as the arbitrator unit which would reset both boards into the beginning of their commands list.
+* Considering that triangles are the most stable geometric shape, yet the one which would use the least amount of material, choosing to build the feet structure based on triangles was an almost obvious decision.
+    * Given that while walking, just one foot will have to stand the whole body weight, building a foot big enough to handle that feat was another concern to join the list.
+* The robot itself had to be as cheap as possible since as students, we had not much money to buy all the expensive frame parts that a robot like this would require.
+    * Was decided then that we would use a cheapest possible (yet strong and easy to modify) structure we could get: Wooden popsicle sticks tied up with steel wire.
+* Power a robot with 8 servo motors (even being micro ones) is no easy task since awnkward problems like current consumption peaks could irreversibly damage most Arduino microncontrollers. We also had just our (2) boards to do so at that time.
+    * Trying out the idea to split the robot function between two boards successfully handled the case. That even created the oportunity to make further tests involving parallel computing using the boards.
+* Coordinate the Arduino boards and consequently the robot actions thru the time, was also a naive challange that we faced just long after it was built. The timing differences between the boards that are caused by the slighest imperfections of their oscillator crystal, caused the robot to stumble over after just one minute of runtime.
+    * That problem was out of our sight and had to be solved, so we used a sensor as the arbitrator unit, which would reset both boards into the beginning of their commands list.
 
 **The project can be seen live and running at this [video](https://www.youtube.com/watch?v=o8BQFcMctYs) on YouTube.**
 
@@ -26,7 +26,7 @@ That's the prime project I ever cared to document and also the first one I did w
 * **Steel wire**
     * Approximately **20 meters** of **2 milimeter thick** steel wire
 * **Sticks**
-    * Approximately **20 wooden popsicle** sticks
+    * Approximately **20 wooden popsicle** sticks of **8 centimeter length**
 * **Arduino**
     * **2 UNO compatible** boards
 * **Motors**
@@ -38,7 +38,7 @@ That's the prime project I ever cared to document and also the first one I did w
     
 # Assembly
 ## Foot
-As previously stated, to maximize size and keep stability, each foot is nothing but a tetrahedron or triangular pyramid made of 6 single sticks wrapped with steel wire.
+As previously stated, to maximize size and keep stability, each foot is nothing but a tetrahedron or triangular pyramid made of **6 single sticks wrapped with steel wire**.
 
 ![image](res/footdesign.jpg)
 
@@ -54,7 +54,7 @@ The connections between all motor blocks are two sticks togheter wrapped with st
 ![image](res/servoblock5.jpg)
 
 ## Putting all togheter
-That is a straightforward phase, screw everything up and make sure that the initial position of the servo horns are approximately in the 90th motor degree of freedom, if not, unscrew and screw again until all the connections stay around the 90 degrees. That action will avoid awnkward movements after.
+That is a straightforward phase, screw everything up and make sure that the initial position of the servo horns are approximately in the 90th motor degree of freedom and if not, unscrew and screw again until all the connections stay around the 90 degrees. That action will avoid awnkward and unexpected movements at the end, when the robot is turned on to walk.
 
 ![image](res/splitparts.jpg)
 ![image](res/standup.jpg)
